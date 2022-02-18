@@ -1,8 +1,11 @@
 import React from 'react';
 import './style.scss';
 
+interface Props {
 
-const App = () => {
+}
+
+const App: React.FC<Props> = () => {
 	return (
 		<div className='box'>
 			Hello
