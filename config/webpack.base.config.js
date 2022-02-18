@@ -8,7 +8,11 @@ const webpackBaseConfig = {
 		filename: '[name].[fullhash:4].js'
 	},
 	resolve: {
-		extensions: ['.js', '.jsx', '.ts', '.tsx']
+		extensions: ['.js', '.jsx', '.ts', '.tsx'],
+		// 配置路径别名，让文件之间互相加载
+		alias: {
+			pages: path.join(__dirname, '../src/pages')
+		}
 	},
 	module: {
 		rules: [
