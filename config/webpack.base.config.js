@@ -14,7 +14,8 @@ const webpackBaseConfig = {
 		extensions: ['.js', '.jsx', '.ts', '.tsx'],
 		// 配置路径别名，让文件之间互相加载
 		alias: {
-			pages: path.join(__dirname, '../src/pages')
+			pages: path.join(__dirname, '../src/pages'),
+			"@utils": path.join(__dirname, '../src/utils'),
 		}
 	},
 	module: {
@@ -25,8 +26,14 @@ const webpackBaseConfig = {
 				exclude: /node_modules/,
 			},
 			{
-				test: /\.ts[x]/,
-				use: 'ts-loader'
+				test: /\.tsx?$/,
+				use: {
+					loader: 'ts-loader',
+					options: {
+						// 提升打包速度
+						// transpileOnly: true
+					}
+				}
 			},
 			{
 				test: /\.(sc|c)ss/,

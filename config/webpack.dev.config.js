@@ -5,8 +5,12 @@ const OpenBrowserPlugin = require('open-browser-webpack4-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpackBaseConfig = require('./webpack.base.config');
 const mockMiddleware = require('./mock.config');
+const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 
 const PORT = 8080;
+
+// 用来检测打包速度
+const smp = new SpeedMeasurePlugin();
 
 const webpackDevConfig = {
 	mode: 'development',
@@ -37,4 +41,4 @@ const webpackDevConfig = {
 	}
 }
 
-module.exports = merge(webpackBaseConfig, webpackDevConfig);
+module.exports = smp.wrap(merge(webpackBaseConfig, webpackDevConfig));
