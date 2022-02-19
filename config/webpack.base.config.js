@@ -15,7 +15,9 @@ const webpackBaseConfig = {
 		// 配置路径别名，让文件之间互相加载
 		alias: {
 			pages: path.join(__dirname, '../src/pages'),
-			"@utils": path.join(__dirname, '../src/utils'),
+			common: path.join(__dirname, '../src/common'),
+			'@utils': path.join(__dirname, '../src/utils/'),
+			'@components': path.join(__dirname, '../src/components/'),
 		}
 	},
 	module: {
