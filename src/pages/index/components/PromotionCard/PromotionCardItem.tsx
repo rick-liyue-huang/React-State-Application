@@ -10,6 +10,7 @@ interface IProps {
 	btnStatus: number;
 	cost?: number;
 	budget?: number;
+	onEnter?: () => void;
 }
 
 interface IState {
@@ -56,6 +57,13 @@ class PromotionCardItem extends Component<IProps, IState> {
 		})
 	}
 
+	handleClick = () => {
+		const {onEnter} = this.props;
+		if (onEnter) {
+			onEnter();
+		}
+	}
+
 	render() {
 		const {name, desc, type, btnStatus, cost = 0, budget = 0} = this.props;
 		const {editModalShow, budgetOption, budgetValue} = this.state;
@@ -97,6 +105,7 @@ class PromotionCardItem extends Component<IProps, IState> {
 							<Button
 								type={this.context.buttonType}
 								size="small"
+								onClick={this.handleClick}
 							>
 								进入
 							</Button>

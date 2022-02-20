@@ -11,17 +11,24 @@ import Account from "pages/index/components/Account";
 import IndexBanner from "pages/index/components/IndexBanner";
 import ProductNews from "pages/index/components/ProductNews";
 import DataTrend from "pages/index/components/DataTrend";
+import {RouteComponentProps} from "react-router-dom";
 
 const {Option} = Select;
 
-interface Props {
+// 拥有 路由的属性
+interface Props extends RouteComponentProps {
 
 }
 
-class Index extends Component<Props> {
+interface IState {
+
+}
+
+class Index extends Component<Props, IState> {
 
 	handleDateChange = (date: moment.Moment | null) => {
 		console.log(moment(date).unix());
+
 	}
 
 	componentDidMount() {
@@ -35,6 +42,9 @@ class Index extends Component<Props> {
 	}
 
 	render() {
+		// 这里props继承了 RouteComponentProps
+		const {history} = this.props;
+
 		return (
 			<div className={'index-page'}>
 				<div className={'head-box'}>
@@ -46,7 +56,9 @@ class Index extends Component<Props> {
 							<DataTrend />
 						</div>
 						<div className="promotion-card-area">
-							<PromotionCard />
+							<PromotionCard
+								history={history}
+							/>
 						</div>
 						<div className="product-card-area">
 							<ProductCard />

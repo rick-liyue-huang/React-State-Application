@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import PromotionCardItem from "pages/index/components/PromotionCard/PromotionCardItem";
 import './style.scss';
 
-interface IProps {}
+interface IProps {
+	history?: any;
+}
 
 interface IState {}
 
@@ -42,6 +44,12 @@ const PromotionData = [
 ]
 
 class promotionCard extends Component<IProps, IState> {
+
+	handleOnEnter = () => {
+		const {history} = this.props;
+		history.push('/searchpage');
+	}
+
 	render() {
 		return (
 			<div className={'promotion-card-component-box'}>
@@ -55,6 +63,7 @@ class promotionCard extends Component<IProps, IState> {
 							btnStatus={promotionItem.btnStatus}
 							desc={promotionItem.desc}
 							type={promotionItem.type}
+							onEnter={this.handleOnEnter}
 						/>
 					))
 				}
