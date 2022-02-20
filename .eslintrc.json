@@ -35,6 +35,7 @@
         "map": [
           ["pages", "./src/pages"],
           ["common", "./src/common"],
+          ["assets", "./src/assets"],
           ["@utils", "./src/utils"],
           ["@components", "./src/components"],
           ["context", "./src/context"],

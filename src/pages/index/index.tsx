@@ -1,17 +1,18 @@
 import React, {Component} from 'react';
-import {Button, DatePicker} from "antd";
 import axios from 'axios';
 import moment from "moment";
+import { Select, Button, DatePicker } from 'antd';
 import './style.scss';
 import Header from "@components/Header";
 import Footer from '@components/Footer';
-import Chart from "pages/index/components/Chart";
 import PromotionCard from "pages/index/components/PromotionCard";
 import ProductCard from "pages/index/components/ProductCard";
 import Account from "pages/index/components/Account";
 import IndexBanner from "pages/index/components/IndexBanner";
 import ProductNews from "pages/index/components/ProductNews";
+import DataTrend from "pages/index/components/DataTrend";
 
+const {Option} = Select;
 
 interface Props {
 
@@ -42,7 +43,7 @@ class Index extends Component<Props> {
 				<div className="content-box">
 					<div className="left-content">
 						<div className={'chart-area'}>
-							<Chart />
+							<DataTrend />
 						</div>
 						<div className="promotion-card-area">
 							<PromotionCard />
