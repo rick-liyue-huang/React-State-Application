@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import CardItem from "pages/index/components/DataTrend/components/CardTabs/CardItem";
+import CardItem from "@components/DataTrend/components/CardTabs/CardItem";
 import {CardItemType} from './types'
 import './style.scss';
 

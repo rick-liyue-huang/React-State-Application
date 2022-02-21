@@ -36,7 +36,12 @@ class CardItem extends Component<IProps, IState> {
 				<div className="info">
 					<div className="name-percent">
 						<div className={nameTextStyle}>{name}</div>
-						<div className={percentTextStyle}>{`${percent}`}</div>
+						{
+							percent && (
+								<div className={percentTextStyle}>{`${percent}`}</div>
+							)
+						}
+
 					</div>
 					<div className={valueTextStyle}>{value}</div>
 				</div>

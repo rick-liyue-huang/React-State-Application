@@ -10,7 +10,7 @@ import ProductCard from "pages/index/components/ProductCard";
 import Account from "pages/index/components/Account";
 import IndexBanner from "pages/index/components/IndexBanner";
 import ProductNews from "pages/index/components/ProductNews";
-import DataTrend from "pages/index/components/DataTrend";
+import DataTrend from "@components/DataTrend";
 import {RouteComponentProps} from "react-router-dom";
 
 const {Option} = Select;
@@ -53,6 +53,29 @@ class Index extends Component<Props, IState> {
 				<div className="content-box">
 					<div className="left-content">
 						<div className={'chart-area'}>
+							<div className="header-box">
+								<div className="title">数据趋势</div>
+								<div className="select-area">
+									<Select
+										defaultValue="0"
+										style={{ width: 120 }}
+										// onChange={this.handlePromotionChange}
+										size="small"
+									>
+										<Option value="0">全部推广产品</Option>
+										<Option value="1">搜索推广</Option>
+										<Option value="2">一站式推广</Option>
+										<Option value="3">合约推广</Option>
+										<Option value="4">知识营销</Option>
+									</Select>
+									<DatePicker
+										// onChange={this.handalDateChange}
+										size="small"
+										style={{ marginLeft: 10 }}
+										placeholder="请选择日期"
+									/>
+								</div>
+							</div>
 							<DataTrend />
 						</div>
 						<div className="promotion-card-area">
