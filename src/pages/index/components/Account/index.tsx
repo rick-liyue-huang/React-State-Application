@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import './style.scss';
 import {Button} from "antd";
+import {ThemeContext} from "context/theme";
+
+const {Consumer} = ThemeContext;
 
 interface IProps {}
 
@@ -60,7 +63,7 @@ class Account extends Component<IProps, IState> {
 						<div className="text">推广余额</div>
 						<div className="value">{balance}</div>
 					</div>
-					<Button type="primary" size="small">充值</Button>
+					<Button type={this.context.buttonType} size="small">充值</Button>
 				</div>
 				<div className="credit">
 					<div>
@@ -74,4 +77,16 @@ class Account extends Component<IProps, IState> {
 	}
 }
 
+// 使用 context
+Account.contextType = ThemeContext;
+
 export default Account;
+
+
+/*
+<Consumer>
+	{
+		(value) => (<div>{value}</div>)
+	}
+</Consumer>
+*/

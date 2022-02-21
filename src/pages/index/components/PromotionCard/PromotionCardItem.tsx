@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Button, Modal, Radio, InputNumber} from "antd";
 import { EditOutlined } from '@ant-design/icons';
+import {ThemeContext} from "context/theme";
 
 interface IProps {
 	name: string;
@@ -148,5 +149,7 @@ class PromotionCardItem extends Component<IProps, IState> {
 		);
 	}
 }
+
+PromotionCardItem.contextType = ThemeContext;
 
 export default PromotionCardItem;

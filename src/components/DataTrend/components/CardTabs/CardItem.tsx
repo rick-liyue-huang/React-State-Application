@@ -32,7 +32,7 @@ class CardItem extends Component<IProps, IState> {
 
 		return (
 			<div className={cardItemStyle} onClick={() => {this.handleClick(id)}}>
-				<img className={'icon'} src={'./card-icon1.png'} alt=""/>
+				<img className={'icon'} src={iconPath} alt=""/>
 				<div className="info">
 					<div className="name-percent">
 						<div className={nameTextStyle}>{name}</div>
