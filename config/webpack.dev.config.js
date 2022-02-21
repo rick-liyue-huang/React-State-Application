@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpackBaseConfig = require('./webpack.base.config');
 const mockMiddleware = require('./mock.config');
 const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 const PORT = 8080;
 
@@ -25,6 +26,8 @@ const webpackDevConfig = {
 		new OpenBrowserPlugin({
 			url: `http://localhost:${PORT}/#/`
 		}),
+		// 配合 transpileOnly: true 提升打包速度
+		new ForkTsCheckerWebpackPlugin()
 	],
 	devtool: 'eval-source-map',
 	devServer: {
@@ -40,5 +43,5 @@ const webpackDevConfig = {
 		},
 	}
 }
-
+// 检测 打包速度, 但是无法做打包时候的类型检查
 module.exports = smp.wrap(merge(webpackBaseConfig, webpackDevConfig));

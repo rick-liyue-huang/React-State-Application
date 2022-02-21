@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 const devMode = process.env.NODE_ENV !== 'production';
 
@@ -34,7 +35,7 @@ const webpackBaseConfig = {
 					loader: 'ts-loader',
 					options: {
 						// 提升打包速度
-						// transpileOnly: true
+						transpileOnly: true
 					}
 				}
 			},

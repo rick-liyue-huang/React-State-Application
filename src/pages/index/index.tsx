@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import moment from "moment";
-import { Select, Button, DatePicker } from 'antd';
+import { Select, DatePicker } from 'antd';
 import {SettingOutlined} from '@ant-design/icons';
 import './style.scss';
 import Header from "@components/Header";
@@ -14,6 +14,7 @@ import ProductNews from "pages/index/components/ProductNews";
 import DataTrend from "@components/DataTrend";
 import {RouteComponentProps} from "react-router-dom";
 import {ThemeContext, ThemeType} from 'context/theme';
+
 
 const {Option} = Select;
 
