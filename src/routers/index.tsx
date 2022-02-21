@@ -20,7 +20,7 @@ const allRoutes = [
 		title: ''
 	},
 	{
-		path: '/searchpage',
+		path: '/searchpromotion',
 		exact: true,
 		component: SearchPromotion,
 		title: ''

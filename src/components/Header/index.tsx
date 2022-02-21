@@ -5,11 +5,21 @@ import {MENU_INDEX_CONFIG} from 'common/constants/menu'
 import './style.scss'
 
 
-interface IProps {}
+interface IProps {
+	history?: any;
+}
 interface IState {}
 
 class Header extends Component<IProps, IState> {
 	state = {}
+
+	handleClick = (url: string) => {
+		const {history} = this.props;
+		if (history) {
+			history.push(url);
+		}
+
+	}
 
 	render() {
 
@@ -25,6 +35,7 @@ class Header extends Component<IProps, IState> {
 									menuItemInfo={menuItem}
 									isActive={menuItem.isActive}
 									key={`index-menu-item${index.toString()}`}
+									onClick={(url: string) => {this.handleClick(url)}}
 								/>
 							))
 						}

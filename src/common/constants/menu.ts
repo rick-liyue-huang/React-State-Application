@@ -87,7 +87,7 @@ export const MENU_INDEX_CONFIG = [
         name: '数据中心',
         menuChildren: [],
         isActive: false,
-        url: '/searchPromotion',
+        url: '/searchpromotion',
     },
     {
         name: '慕课大学',

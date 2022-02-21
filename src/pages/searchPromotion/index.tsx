@@ -58,24 +58,30 @@ interface IProps extends RouteComponentProps {
 
 
 class SearchPromotion extends Component<IProps> {
+
 	render() {
+
+		const {history} = this.props;
+
 		return (
 			<div className={'search-promotion-page-box'}>
 				<div className="header">
-					<Header />
+					<Header history={history} />
 				</div>
 				<div className="content">
 					<div className="account-box">
 						<Account />
 					</div>
 					<div className="data-trend-box">
-						<div className={'data-trend-title'}>数据趋势</div>
+						<div className={'title'}>数据趋势</div>
 						<DataTrend cardData={cardData} />
 					</div>
 					<div className="wave-analysis-box">
+						<div className={'title'}>波动分析</div>
 						<WaveAnalysis />
 					</div>
 					<div className="user-portrait-box">
+						<div className={'title'}>用户画像</div>
 						<UserPortrait />
 					</div>
 				</div>
